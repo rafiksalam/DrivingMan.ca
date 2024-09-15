@@ -1,0 +1,570 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+  --primary-color: #e53935;
+  --secondary-color: #333333;
+  --background-color: #f5f5f5;
+  --text-color: #333333;
+  --accent-color: #ff6b6b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+/* Header and Navigation */
+header {
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.logo span {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 2rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 0 10%;
+  background-color: var(--background-color);
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 500px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: var(--accent-color);
+}
+
+/* About Section */
+.about {
+  padding: 5rem 10%;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--secondary-color);
+}
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.feature {
+  flex-basis: calc(33.333% - 2rem);
+  margin-bottom: 2rem;
+}
+
+.feature i {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.feature h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Compare Features Section */
+.compare-features {
+  padding: 5rem 10%;
+  background-color: white;
+  text-align: center;
+}
+
+.compare-features h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--secondary-color);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.feature-item {
+  background-color: var(--background-color);
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-item i {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.feature-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+}
+
+/* Pricing Section */
+.pricing {
+  background-color: var(--background-color);
+  padding: 5rem 10%;
+  text-align: center;
+}
+
+/* Pricing Section (continued) */
+.pricing h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--secondary-color);
+  }
+  
+  .pricing-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .pricing-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    flex-basis: calc(50% - 1rem);
+    max-width: 350px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .pricing-card.featured {
+    border: 2px solid var(--primary-color);
+  }
+  
+  .pricing-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+  }
+  
+  .price span {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  
+  .pricing-card ul {
+    list-style: none;
+    margin-bottom: 1.5rem;
+  }
+  
+  .pricing-card ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .book-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  
+  .book-button:hover {
+    background-color: var(--accent-color);
+  }
+  
+  /* FAQ Section */
+  .faq-section {
+    padding: 5rem 10%;
+    background-color: white;
+    text-align: center;
+  }
+  
+  .faq-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--secondary-color);
+  }
+  
+  .faq {
+    background-color: var(--background-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .faq:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .faq-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .faq-content {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-top: 1rem;
+  }
+  
+  .faq.active .faq-content {
+    display: block;
+  }
+  
+  /* Location Section */
+  .location-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5rem 10%;
+    background-color: var(--background-color);
+  }
+  
+  .location-section .text {
+    flex-basis: 40%;
+    padding-right: 2rem;
+  }
+  
+  .location-section h2 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+  }
+  
+  .location-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-color);
+  }
+  
+  .location-section .map {
+    flex-basis: 55%;
+  }
+  
+  .location-section iframe {
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Contact Section */
+  .contact {
+    background-color: white;
+    padding: 5rem 10%;
+    text-align: center;
+  }
+  
+  .contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--secondary-color);
+  }
+  
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    text-align: left;
+  }
+  
+  form input,
+  form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  form textarea {
+    height: 150px;
+  }
+  
+  .submit-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: var(--accent-color);
+  }
+  
+  /* Footer */
+  footer {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 3rem 10% 1rem;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+  
+  .footer-section {
+    flex-basis: calc(33.333% - 2rem);
+    margin-bottom: 2rem;
+  }
+  
+  .footer-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-section ul li a:hover {
+    color: var(--accent-color);
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Reviews Page */
+  .reviews-container {
+    padding: 5rem 10%;
+    background-color: var(--background-color);
+  }
+  
+  .reviews-container h1 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .google-form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .google-form-container iframe {
+    width: 100%;
+    height: 800px;
+    border: none;
+  }
+
+  /* Hide the header */
+.hide-header {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+  }
+  
+  /* Add a transition for a smooth effect */
+  header {
+    transition: transform 0.3s ease;
+  }
+  
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    
+    nav {
+      flex-direction: column;
+    }
+  
+    nav ul {
+      margin-top: 1rem;
+    }
+  
+    nav ul li {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+  
+    .hero {
+      flex-direction: column;
+      height: auto;
+      padding-top: 100px;
+    }
+  
+    .hero-content,
+    .hero-image {
+      flex: 1;
+      max-width: 100%;
+      margin-bottom: 2rem;
+    }
+  
+    .feature {
+      flex-basis: 100%;
+    }
+  
+    .pricing-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .pricing-card {
+      flex-basis: 100%;
+      margin-bottom: 2rem;
+    }
+  
+    .location-section {
+      flex-direction: column;
+    }
+  
+    .location-section .text,
+    .location-section .map {
+      flex-basis: 100%;
+      margin-bottom: 2rem;
+    }
+  
+    .footer-section {
+      flex-basis: 100%;
+    }
+  }
