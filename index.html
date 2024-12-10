@@ -26,16 +26,17 @@
   </header>
 
     <main>
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h1>Master Manual Driving</h1>
-                <p>Conquer the clutch and shift your skills into high gear!</p>
-                <a href="#pricing" class="cta-button">Start Your Journey</a>
-            </div>
-            <div class="hero-image">
-                <img src="manual.png" alt="Manual Transmission">
-            </div>
-        </section>
+      <section id="home" class="section hero">
+        <div class="hero-content">
+            <h1>Master Manual Driving</h1>
+            <p>Conquer the clutch and shift your skills into high gear!</p>
+            <a href="#pricing" class="cta-button">Start Your Journey</a>
+        </div>
+        <div class="hero-image">
+            <img src="manual.png" alt="Manual Transmission" class="car frame1">
+            <img src="skid-mark.png" alt="Skid Mark" class="skid-mark">
+        </div>
+    </section>
 
         <section id="about" class="about">
             <h2>Why Choose Us?</h2>
@@ -84,31 +85,35 @@
             </div>
         </section>
 
-        <section id="pricing" class="pricing">
+        <div id="pricing" class="section pricing">
           <h2>Our Packages</h2>
           <div class="pricing-cards">
-              <div class="pricing-card">
-                  <h3>Single Lesson</h3>
-                  <p class="price">$75<span>/hr</span></p>
-                  <ul>
-                      <li>1-hour intensive session</li>
-                      <li>Flexible scheduling</li>
-                      <li>Personalized feedback</li>
-                  </ul>
-                  <a href="https://app.acuityscheduling.com/schedule.php?owner=33417104&ref=booking_button" target="_blank" class="acuity-embed-button" style="background: #e53935; color: #fff; padding: 8px 12px; border: 0px; -webkit-box-shadow: 0 -2px 0 rgba(0,0,0,0.15) inset; -moz-box-shadow: 0 -2px 0 rgba(0,0,0,0.15) inset; box-shadow: 0 -2px 0 rgba(0,0,0,0.15) inset; border-radius: 4px; text-decoration: none; display: inline-block;">Book Now</a>
-              </div>
-              <div class="pricing-card featured">
-                  <h3>3-Lesson Package</h3>
-                  <p class="price">$200<span>/3hrs</span></p>
-                  <ul>
-                      <li>3 separate lessons</li>
-                      <li>Progressive skill building</li>
-                      <li>Save $25</li>
-                  </ul>
-                  <a href="https://app.acuityscheduling.com/schedule.php?owner=33417104&ref=booking_button" target="_blank" class="acuity-embed-button" style="background: #e53935; color: #fff; padding: 8px 12px; border: 0px; -webkit-box-shadow: 0 -2px 0 rgba(0,0,0,0.15) inset; -moz-box-shadow: 0 -2px 0 rgba(0,0,0,0.15) inset; box-shadow: 0 -2px 0 rgba(0,0,0,0.15) inset; border-radius: 4px; text-decoration: none; display: inline-block;">Book Now</a>
-              </div>
+            <div class="pricing-card">
+              <h3>Single Lesson</h3>
+              <div class="price">$75/hr</div>
+              <ul>
+                <li>1-hour intensive session</li>
+                <li>Flexible scheduling</li>
+                <li>Personalized feedback</li>
+                <li>Beginner-friendly & refreshers</li>
+                <li>Learn clutch control basics</li>
+              </ul>
+              <a href="https://app.acuityscheduling.com/schedule.php?owner=33417104&ref=booking_button" class="book-button">Book Now</a>
+            </div>
+            <div class="pricing-card featured">
+              <h3>Ultimate Package</h3>
+              <div class="price">$200/3hrs</div>
+              <ul>
+                <li>3 separate lessons</li>
+                <li>Progressive skill building</li>
+                <li>Master upshifting & downshifting</li>
+                <li>Practice rev-matching</li>
+                <li>Open road driving experience</li>
+              </ul>
+              <a href="https://app.acuityscheduling.com/schedule.php?owner=33417104&ref=booking_button" class="book-button">Book Now</a>
+            </div>
           </div>
-      </section>
+        </div>
       
       <!-- Acuity Scheduling Script -->
       <script src="https://embed.acuityscheduling.com/embed/button/33417104.js" async></script>
@@ -138,7 +143,7 @@
             </div>
             <div class="faq">
               <div class="faq-title">How do I book the 3-Lesson package?</div>
-              <div class="faq-content">When you click on "Book Now", the scheduling page appears. Pick a date and a time, and press "Select and choose another time" and add another lesson.</div>
+              <div class="faq-content">When you click on "Book Now", the scheduling page appears. Pick a date and a time, and press "Select and choose another time" and add another lesson twice.</div>
             </div>
             <div class="faq">
               <div class="faq-title">What is the cancellation/rescheduling policy?</div>
@@ -253,11 +258,13 @@
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
+        
         <div class="footer-section">
           <h3>Contact Us</h3>
           <p>Email: drivingmanca@gmail.com</p>
-          <p>Phone: +1 (647)-920-0209</p>
+          <p>Phone: <a href="tel:+16479200209" style="text-decoration: none; color: inherit;">+1 (647) 920-0209</a></p>
         </div>
+
         <div class="footer-section">
           <h3>Follow Us</h3>
           
@@ -274,6 +281,46 @@
             speed: 800,
             speedAsDuration: true
         });
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const carImage = document.querySelector('.hero-image img');
+        const skidMark = document.querySelector('.skid-mark');
+        const heroSection = document.querySelector('.hero');
+
+        carImage.classList.add('car-scroll-animation');
+
+        let lastScrollPosition = window.scrollY;
+
+        function updateCarPosition() {
+          const scrollPosition = window.scrollY;
+          const heroHeight = heroSection.offsetHeight;
+          const scrollPercentage = Math.min(scrollPosition / heroHeight, 1);
+
+          const maxRotation = 45;
+          const rotation = maxRotation * scrollPercentage;
+          const xPosition = -100 * scrollPercentage;
+          const scale = 1 - (0.5 * scrollPercentage);
+
+          carImage.style.transform = `translateX(${xPosition}%) rotate(${rotation}deg) scale(${scale})`;
+
+          // Skid mark animation
+          if (scrollPosition > lastScrollPosition) {
+            // Scrolling down
+            skidMark.style.opacity = scrollPercentage;
+            skidMark.style.transform = `translateX(${100 - (scrollPercentage * 100)}%)`;
+          } else {
+            // Scrolling up
+            skidMark.style.opacity = Math.max(0, scrollPercentage - 0.1);
+            skidMark.style.transform = `translateX(${100 - (scrollPercentage * 100)}%)`;
+          }
+
+          lastScrollPosition = scrollPosition;
+        }
+
+        window.addEventListener('scroll', updateCarPosition);
+        updateCarPosition();
+      });
     </script>
 </body>
 </html>
